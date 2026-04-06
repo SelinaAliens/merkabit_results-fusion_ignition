@@ -1,0 +1,485 @@
+kcp_version: '0.14'
+project: merkabit-results-fusion-ignition
+description: >
+  Paper 3 of the Merkabit series. Covers IBM quantum verification and fusion ignition physics using the PSL(2,7) algebraic
+  geometry framework. The manuscript derives universal confinement ratios, Lawson criterion gap analysis, and breathing window
+  (F-gate) ignition dynamics. No README exists — the PDF manuscript is the primary orientation unit.
+version: '1.0'
+created: '2026-04-06'
+maintainer: Selina Stenberg
+units:
+- id: paper3_pdf
+  path: Paper_3_Fusion_Ignition_v1.pdf
+  intent: >
+    Primary orientation unit for this repo. No README exists. Paper 3 of the Merkabit series: IBM quantum verification + fusion
+    ignition physics. Covers PSL(2,7) confinement ratios, Lawson criterion, breathing window F-gate protocol, and quantum
+    verification results.
+  scope: project
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Paper 3
+  - fusion ignition
+  - IBM quantum
+  - Merkabit Paper 3
+  hints:
+    load_strategy: eager
+    token_estimate: 2000
+    priority: critical
+- id: paper3_docx
+  path: Paper_3_Fusion_Ignition_v1.docx
+  intent: DOCX version of Paper 3 manuscript. Same content as PDF. Use PDF for reading.
+  scope: project
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Paper 3
+  - manuscript
+  hints:
+    load_strategy: lazy
+    token_estimate: 2000
+    priority: critical
+- id: fusion_ignition_simulation
+  path: fusion_ignition_simulation.py
+  intent: >
+    Main simulation script for Paper 3. Implements the full fusion ignition physics combining IBM quantum verification results
+    with PSL(2,7) confinement framework.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - fusion ignition
+  - IBM quantum
+  - Paper 3
+  - main simulation
+  hints:
+    load_strategy: lazy
+    token_estimate: 800
+    priority: critical
+- id: module9_universal_confinement
+  path: module9_universal_confinement.py
+  intent: >
+    Derives the universal confinement ratio from PSL(2,7) algebraic geometry. Central result of Paper 3 connecting the abstract
+    group structure to measurable tokamak parameters.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - universal confinement
+  - confinement ratio
+  - PSL(2,7) confinement
+  - module 9
+  hints:
+    load_strategy: lazy
+    token_estimate: 700
+    priority: critical
+- id: module7_lawson_gap
+  path: module7_lawson_gap.py
+  intent: >
+    Analyzes the gap to the Lawson ignition criterion. Quantifies how close current tokamak parameters are to the ignition
+    threshold under the PSL(2,7) framework.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Lawson criterion
+  - Lawson gap
+  - ignition condition
+  - module 7
+  hints:
+    load_strategy: lazy
+    token_estimate: 700
+    priority: critical
+- id: module6_breathing_window
+  path: module6_breathing_window.py
+  intent: >
+    Simulates the breathing window — the oscillatory F-gate timing window that defines the ignition protocol. Key actionable
+    output: optimal RMP coil timing.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - breathing window
+  - F-gate
+  - oscillation
+  - module 6
+  hints:
+    load_strategy: lazy
+    token_estimate: 700
+    priority: critical
+- id: module7_iter_frequency
+  path: module7_iter_frequency.py
+  intent: Iterative optimization of actuation frequency for the ignition protocol.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - frequency optimization
+  - iterative
+  - module 7 frequency
+  hints:
+    load_strategy: lazy
+    token_estimate: 600
+    priority: supplementary
+- id: module6_fgate_breathing
+  path: module6_fgate_breathing.py
+  intent: Models F-gate breathing dynamics — oscillatory behavior of the gate function.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - F-gate breathing
+  - gate dynamics
+  - module 6 breathing
+  hints:
+    load_strategy: lazy
+    token_estimate: 600
+    priority: supplementary
+- id: generate_paper3
+  path: generate_paper3.js
+  intent: JavaScript build script for generating Paper 3 figures and document.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - build script
+  - generate paper
+  hints:
+    load_strategy: lazy
+    token_estimate: 300
+    priority: reference
+- id: fig_module5_lawson
+  path: module5_lawson_merkabit.png
+  intent: Module 5 output figure showing Lawson criterion plot with Merkabit correction.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Lawson figure
+  - module 5
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: supplementary
+- id: fig_module9_confinement_ratio
+  path: module9_confinement_ratio.png
+  intent: 'Module 9 output figure: universal confinement ratio from PSL(2,7).'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - confinement ratio figure
+  - module 9 figure
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: supplementary
+- id: fig_module9_confinement_table
+  path: module9_confinement_table.png
+  intent: 'Module 9 output figure: tabulated confinement values across tokamak regimes.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - confinement table
+  - module 9 table
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: supplementary
+- id: fig_module6_ouroboros
+  path: module6_ouroboros_orbit.png
+  intent: Module 6 phase space figure showing ouroboros-like orbital structure.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - ouroboros
+  - module 6 orbit
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module6_phase_portrait
+  path: module6_phase_portrait.png
+  intent: Module 6 phase portrait of the breathing window dynamics.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - phase portrait
+  - module 6 phase
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module6a_breathing
+  path: module6a_breathing_cycle.png
+  intent: 'Module 6a figure: full breathing cycle of the F-gate.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - breathing cycle
+  - module 6a
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module6a_fgate
+  path: module6a_fgate_breathing.png
+  intent: 'Module 6a figure: F-gate breathing waveform.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - F-gate breathing figure
+  - module 6a fgate
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module6b_fgate_basin
+  path: module6b_fgate_basin.png
+  intent: 'Module 6b figure: basin of attraction for F-gate ignition.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - F-gate basin
+  - basin of attraction
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module6b_optimal_window
+  path: module6b_optimal_window.png
+  intent: 'Module 6b figure: optimal timing window for F-gate ignition.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - optimal window
+  - module 6b
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module6c_r_factorization
+  path: module6c_r_factorization.png
+  intent: 'Module 6c figure: R factorization in the PSL(2,7) framework.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - R factorization
+  - module 6c
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module6d_lawson_corrected
+  path: module6d_lawson_corrected.png
+  intent: 'Module 6d figure: corrected Lawson criterion with PSL(2,7) modification.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Lawson corrected
+  - module 6d
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module7_frequency_sweep
+  path: module7_frequency_sweep.png
+  intent: 'Module 7 figure: frequency sweep for iterative optimization.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - frequency sweep
+  - module 7 sweep
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module7_recommendation
+  path: module7_iter_frequency_recommendation.png
+  intent: 'Module 7 figure: recommended optimal frequency for ignition protocol.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - frequency recommendation
+  - module 7 recommendation
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module7_sensitivity
+  path: module7_sensitivity.png
+  intent: 'Module 7 figure: sensitivity of ignition window to parameter variation.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - sensitivity analysis
+  - module 7 sensitivity
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module1_bifurcation
+  path: module1_bifurcation.png
+  intent: 'Module 1 figure: bifurcation diagram.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - bifurcation
+  - module 1
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module1_order_parameter
+  path: module1_order_parameter.png
+  intent: 'Module 1 figure: order parameter evolution.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - order parameter
+  - module 1 order
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module2_critical_heating
+  path: module2_critical_heating.png
+  intent: 'Module 2 figure: critical heating threshold.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - critical heating
+  - module 2
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module2_kww_envelope
+  path: module2_kww_envelope.png
+  intent: 'Module 2 figure: KWW envelope of ELM dynamics.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - KWW envelope
+  - module 2 KWW
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module3_bifurcation_map
+  path: module3_bifurcation_map.png
+  intent: 'Module 3 figure: full bifurcation map across parameter space.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - bifurcation map
+  - module 3
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+- id: fig_module4_floquet
+  path: module4_floquet_stability.png
+  intent: 'Module 4 figure: Floquet stability analysis.'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Floquet stability
+  - Floquet
+  - module 4
+  hints:
+    load_strategy: lazy
+    token_estimate: 200
+    priority: reference
+relationships:
+- from: fusion_ignition_simulation
+  to: paper3_pdf
+  type: implements
+  note: Main simulation implements the Paper 3 ignition theory
+- from: module9_universal_confinement
+  to: paper3_pdf
+  type: implements
+  note: Universal confinement ratio is a central Paper 3 result
+- from: module7_lawson_gap
+  to: paper3_pdf
+  type: implements
+  note: Lawson gap analysis is core Paper 3 content
+- from: module6_breathing_window
+  to: paper3_pdf
+  type: implements
+  note: Breathing window protocol is Paper 3's actionable output
+- from: module7_iter_frequency
+  to: module7_lawson_gap
+  type: extends
+  note: Frequency optimization refines the Lawson gap closure strategy
+- from: module6_fgate_breathing
+  to: module6_breathing_window
+  type: extends
+  note: F-gate breathing dynamics detail the breathing window mechanism
+- from: fig_module5_lawson
+  to: module7_lawson_gap
+  type: visualizes
+  note: Module 5 Lawson figure is the primary visualization of gap analysis
+- from: fig_module9_confinement_ratio
+  to: module9_universal_confinement
+  type: visualizes
+- from: fig_module9_confinement_table
+  to: module9_universal_confinement
+  type: visualizes
+- from: fig_module6_ouroboros
+  to: module6_breathing_window
+  type: visualizes
+- from: fig_module6a_breathing
+  to: module6_fgate_breathing
+  type: visualizes
+- from: fig_module7_recommendation
+  to: module7_iter_frequency
+  type: visualizes
+  note: Primary actionable figure from frequency optimization module
